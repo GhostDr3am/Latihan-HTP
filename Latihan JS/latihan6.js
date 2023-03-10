@@ -16,4 +16,4 @@ if (nilai > 85 && nilai <= 100) {
   grade = 'Nilai tidak valid'
 }
 
-Document.write("Siswa bernama " + siswa + " mendapatkan grade " + grade + " dengan nilai " + nilai)
+document.write("Siswa bernama " + siswa + " mendapatkan grade " + grade + " dengan nilai " + nilai)
