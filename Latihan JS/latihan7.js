@@ -17,11 +17,21 @@ if (nilai > 85 && nilai <= 100) {
 }
 
 switch (grade) {
-  case 'A': predikat = 'Sangat Memuaskan'; break;
-  case 'B': predikat = 'baik'; break;
-  case 'C': predikat = 'Cukup'; break;
-  case 'D': predikat = 'Kurang'; break;
-  case 'E': predikat = 'Sangat Kurang'; break;
+  case 'A':
+    predikat = 'Sangat Memuaskan';
+    break;
+  case 'B':
+    predikat = 'baik';
+    break;
+  case 'C':
+    predikat = 'Cukup';
+    break;
+  case 'D':
+    predikat = 'Kurang';
+    break;
+  case 'E':
+    predikat = 'Sangat Kurang';
+    break;
   default: predikat = 'Nilai tidak valid';
     break;
 }

@@ -4,9 +4,15 @@ let harga = 0
 
 
 switch (produk) {
-  case 'TV': harga = 2000000; break;
-  case 'Kulkas': harga = 3000000; break;
-  case 'Mesin Cuci': harga = 4000000; break;
+  case 'TV':
+    harga = 2000000;
+    break;
+  case 'Kulkas':
+    harga = 3000000;
+    break;
+  case 'Mesin Cuci':
+    harga = 4000000;
+    break;
   default: harga = 0
 }
 
