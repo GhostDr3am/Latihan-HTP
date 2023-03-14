@@ -1,0 +1,40 @@
+<h3>
+  <table border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Alamat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        let no, warna;
+        for (no = 1; no <= 10; no++) {
+          warna = no % 2 == 0 ? "red" : "blue";
+          // document.write(
+          //   "<tr><td style='color:" +
+          //     warna +
+          //     "'>" +
+          //     no +
+          //     "</td><td style='color:" +
+          //     warna +
+          //     "'>Nama " +
+          //     no +
+          //     "</td><td style='color:" +
+          //     warna +
+          //     "'>Alamat " +
+          //     no +
+          //     "</td></tr>"
+          // );
+          document.write(`<tr bgcolor="${warna}">
+            <td>${no}</td>
+            <td>Dedi ${no}</td>
+            <td>Bajur ${no}</td>
+            </tr>`
+          );
+        }
+      </script>
+    </tbody>
+  </table>
+</h3>
