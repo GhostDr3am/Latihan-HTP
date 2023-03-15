@@ -1,0 +1,38 @@
+
+<script>
+let p = { nama: 'Dedi', nilai: 90 };
+let p1 = { nama: 'Ali', nilai: 85 };
+let p2 = { nama: 'Aldo', nilai: 80 };
+let p3 = { nama: 'Udin', nilai: 85 };
+let p4 = { nama: 'Sidin', nilai: 80 };
+
+let person = [p, p1, p2, p3, p4];
+</script>
+
+<h3>
+  <table border="" cellpadding="10">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Nilai</th>
+        <th>Keterangan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        var no = 1;
+        for (p of person) {
+          let ket = (p.nilai >= 60)? 'Lulus' : 'Tidak Lulus';
+          document.write(`<tr>
+            <td>${no++}</td>
+            <td>${p.nama}</td>
+            <td>${p.nilai}</td>
+            <td>${ket}</td>
+            </tr>`
+          );
+        }
+      </script>
+    </tbody>
+  </table>
+</h3>
