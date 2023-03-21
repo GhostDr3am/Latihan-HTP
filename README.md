@@ -1,2 +1,2 @@
-# Tugas2MSIB
-Tugas HTML dan CSS Studi Independen
+# Latihan HTP
+Kumpulan Source Code Latihan MSIB
