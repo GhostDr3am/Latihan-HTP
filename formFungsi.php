@@ -1,7 +1,9 @@
 <?php
-$prodi = ["SI" => "Sistem Informasi", "TI" => "Teknik Informatika", "MI" => "Manajemen Informatika"];
+$prodi = ["SI" => "Sistem Informasi", "TI" => "Teknik Informatika", "MI" => "Manajemen Informatika", "TF" => "Teknologi Informasi"];
 $skill = ["HTML" => 10, "CSS" => 80, "PHP" => 70, "JS" => 60, "MySQL" => 50];
-$domisili = ["JKT" => "Jakarta", "BDG" => "Bandung", "SBY" => "Surabaya", "MLG" => "Malang"];
+
+$domisili = ["Jakarta", "Bandung", "Surabaya", "Malang"];
+
 ?>
 <style>
   fieldset {
@@ -82,9 +84,11 @@ $domisili = ["JKT" => "Jakarta", "BDG" => "Bandung", "SBY" => "Surabaya", "MLG" 
           <td>:</td>
           <td>
             <select name="domisili" id="domisili">
-              <?php foreach ($domisili as $key => $value) : ?>
-                <option value="<?= $key ?>"><?= $value ?></option>
-              <?php endforeach; ?>
+              <?php
+              foreach ($domisili as $d) {
+              ?>
+                <option value="<?= $d ?>"><?= $d ?></option>
+              <?php } ?>
             </select>
           </td>
         </tr>
@@ -102,6 +106,42 @@ $domisili = ["JKT" => "Jakarta", "BDG" => "Bandung", "SBY" => "Surabaya", "MLG" 
 </fieldset>
 <?php
 error_reporting(0);
+// Menghitung skor skill
+function skor($skill)
+{
+  $skor = 0;
+  foreach ($skill as $s) {
+    if ($s == "HTML") {
+      $skor += 10;
+    } elseif ($s == "CSS") {
+      $skor += 20;
+    } elseif ($s == "PHP") {
+      $skor += 30;
+    } elseif ($s == "JS") {
+      $skor += 40;
+    } elseif ($s == "MySQL") {
+      $skor += 50;
+    }
+  }
+  return $skor;
+};
+
+//menentukan kategori skill
+function kategori($skor)
+{
+  if ($skor >= 100 && $skor <= 150) {
+    return "Sangat Baik";
+  } elseif ($skor >= 60 && $skor <= 100) {
+    return "Baik";
+  } elseif ($skor >= 40 && $skor <= 60) {
+    return "Cukup";
+  } elseif ($skor >= 0 && $skor <= 40) {
+    return "Kurang";
+  } else {
+    return "Tidak Memadai";
+  }
+}
+
 
 if (isset($_POST['proses'])) {
   $nim = $_POST['nim'];
@@ -146,13 +186,30 @@ if (isset($_POST['proses'])) {
       </td>
     </tr>
     <tr>
+      <td>Skor Skill</td>
+      <td>:</td>
+      <td>
+        <?php
+        $skor = skor($skill);
+        echo $skor;
+        ?>
+      </td>
+    </tr>
+    <tr>
+      <td>Kategori Skiill</td>
+      <td>:</td>
+      <td>
+        <?php
+        $kategori = kategori($skor);
+        echo $kategori;
+        ?>
+      </td>
+    </tr>
+    <tr>
       <td>Domisili</td>
       <td>:</td>
       <td><?= $domisili ?></td>
     </tr>
-    <tr>
-      <td>Skor Skill</td>
 
-    </tr>
   </table>
 </fieldset>
